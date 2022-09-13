@@ -4,7 +4,7 @@
    <li 
    *ngFor="let c of cocktails; let i  = index"
    (click)="selectCocktail(i)"
-      >{{ c.name }}
+   [appSelected]="c.name === selectedCocktail.name">{{ c.name }}
    </li>
 </ul>
 

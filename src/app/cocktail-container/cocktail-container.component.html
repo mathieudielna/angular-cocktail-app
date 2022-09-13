@@ -2,6 +2,7 @@
 
   <app-cocktail-list 
   (changeCocktail)="selectCocktail($event)"
+  [selectedCocktail]="selectedCocktail" 
   [cocktails]="cocktails" 
   class="flex-50 pr-10"
   ></app-cocktail-list>

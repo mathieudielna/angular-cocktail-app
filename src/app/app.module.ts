@@ -16,7 +16,7 @@ import { CocktailListComponent } from './cocktail-container/cocktail-list/cockta
     FooterComponent,
     CocktailListComponent,
     CocktailDetailsComponent,
-    CocktailContainerComponent
+    CocktailContainerComponent,
   ],
   imports: [
     BrowserModule,

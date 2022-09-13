@@ -10,12 +10,14 @@ import { CocktailService } from 'src/app/shared/services/cocktail.service';
 })
 export class CocktailListComponent implements OnInit {
 
-  // List des cocktails envoyé par le container 
-  @Input()
-  public cocktails?: Cocktail[];
+  // Cocktails sent by the container 
+  @Input() public cocktails!: Cocktail[];
+  @Input() public selectedCocktail!: Cocktail;
 
-  // cocktail selectionner par user 
+  // passage of functions in the servicescocktail selected by user 
   @Output() private changeCocktail: EventEmitter<number> = new EventEmitter<number>();
+
+  
 
   constructor(private cocktailService: CocktailService) { }
 
