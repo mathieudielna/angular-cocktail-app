@@ -7,7 +7,7 @@ import { Cocktail } from '../interfaces/cocktail.interface';
 })
 export class CocktailService {
 
-  public cocktails: BehaviorSubject<any> = new BehaviorSubject([
+  public cocktails$: BehaviorSubject<any> = new BehaviorSubject([
     {
       name: "Mojito",
       img: "https://www.offcourses.net/9466-large_default/boisson-gazeuse-4-agrumes.jpg",
@@ -25,8 +25,12 @@ export class CocktailService {
     }
   ]);
 
-  public selectedCocktail: BehaviorSubject<Cocktail> = new BehaviorSubject(this.cocktails.value[0]);
+  public selectedCocktail$: BehaviorSubject<Cocktail> = new BehaviorSubject(this.cocktails$.value[0]);
   
+  public selectCocktail(index: number): void {
+    this.selectedCocktail$.next(this.cocktails$.value[index]);
+  }
+
   constructor() { 
     
   }

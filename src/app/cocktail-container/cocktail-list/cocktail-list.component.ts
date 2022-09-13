@@ -1,5 +1,6 @@
 import { Cocktail } from '../../shared/interfaces/cocktail.interface';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CocktailService } from 'src/app/shared/services/cocktail.service';
 
 
 @Component({
@@ -16,11 +17,16 @@ export class CocktailListComponent implements OnInit {
   // cocktail selectionner par user 
   @Output() private changeCocktail: EventEmitter<number> = new EventEmitter<number>();
 
-  public selectCocktail(index: number): void {
-    this.changeCocktail.emit(index);
-  }
+  constructor(private cocktailService: CocktailService) { }
 
-  constructor() { }
+  // public selectCocktail(index: number): void {
+  //   this.changeCocktail.emit(index);
+  // }
+  
+  public selectCocktail(index: number): void {
+    this.cocktailService.selectCocktail(index);
+  }
+  
 
   ngOnInit(): void {
   }
