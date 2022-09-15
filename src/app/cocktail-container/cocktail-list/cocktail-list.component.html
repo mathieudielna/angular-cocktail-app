@@ -2,8 +2,8 @@
 
 <ul class="mb-20 list-primary">
    <li 
-   appSelected="c.name === selectedCocktail.name"
    *ngFor="let c of cocktails; let i  = index"
+   appSelected="c.name === selectedCocktail.name"
    (click)="selectCocktail(i)"
    >
    {{ c.name }}

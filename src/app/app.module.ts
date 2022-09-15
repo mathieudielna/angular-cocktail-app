@@ -12,18 +12,12 @@ import { IngredientComponent } from './ingredient/ingredient.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { Route, RouterModule, Routes } from '@angular/router';
 import { IngredientsComponent } from './ingredients/ingredients.component';
-import { from } from 'rxjs';
 import { RecipesComponent } from './recipes/recipes.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { APP_ROUTES } from './app.routes'
+import { CommonModule } from '@angular/common';
+import { UserComponent } from './user/user.component';
 
-const APP_ROUTES: Routes = [
-  {path:'',component:CocktailContainerComponent},
-  {path:'ingredients',component:IngredientsComponent, children : [
-    {path:'data/:id',component:RecipeComponent},
-  ]},
-  {path:'recipes',component:RecipesComponent, children : [
-    {path:'data/:id',component:RecipeComponent},
-  ]},
-]
 
 @NgModule({
   declarations: [
@@ -36,11 +30,15 @@ const APP_ROUTES: Routes = [
     IngredientComponent,
     IngredientsComponent,
     RecipeComponent,
-    RecipesComponent
+    RecipesComponent,
+    NotFoundComponent,
+    UserComponent
+
   ],
   imports: [
 BrowserModule,
     FormsModule,
+    CommonModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [],
