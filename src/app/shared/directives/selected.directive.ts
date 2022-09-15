@@ -5,7 +5,7 @@ import { Directive, HostBinding, Input, OnChanges, SimpleChanges } from '@angula
 })
 export class SelectedDirective implements OnChanges {
 
-  @Input() private appSelected?: boolean;  
+  @Input() public appSelected?: boolean;  
   @HostBinding('style.backgroundColor') private backgroundColor?: String;
   @HostBinding('style.color') private color?: String;
   @HostBinding('style.fontWeight') private fontWeight?: String;
