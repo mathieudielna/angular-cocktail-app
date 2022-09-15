@@ -11,11 +11,16 @@ import { CocktailListComponent } from './cocktail-container/cocktail-list/cockta
 import { IngredientComponent } from './ingredient/ingredient.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { Route, RouterModule, Routes } from '@angular/router';
+import { IngredientsComponent } from './ingredients/ingredients.component';
+import { from } from 'rxjs';
+import { RecipesComponent } from './recipes/recipes.component';
 
 const APP_ROUTES: Routes = [
   {path:'',component:CocktailContainerComponent},
-  {path:'ingredient',component:IngredientComponent},
-  {path:'recipe',component:RecipeComponent},
+  {path:'ingredients',component:IngredientsComponent},
+  {path:'ingredient/:id',component:RecipeComponent},
+  {path:'recipes',component:RecipesComponent},
+  {path:'recipe/:id',component:RecipeComponent},
 ]
 
 @NgModule({
@@ -27,10 +32,12 @@ const APP_ROUTES: Routes = [
     CocktailDetailsComponent,
     CocktailContainerComponent,
     IngredientComponent,
+    IngredientsComponent,
     RecipeComponent,
+    RecipesComponent
   ],
   imports: [
-  BrowserModule,
+BrowserModule,
     FormsModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
