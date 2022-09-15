@@ -106,6 +106,13 @@ body {
 }
 // theme 
 .list-primary {
+    &-active {
+        background-color: var(--secondary);
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+        transition : all 0.4sec
+    }
     li{
         padding: 10px 15px;
         border: 1px solid var(--lightgray);

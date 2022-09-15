@@ -17,10 +17,12 @@ import { RecipesComponent } from './recipes/recipes.component';
 
 const APP_ROUTES: Routes = [
   {path:'',component:CocktailContainerComponent},
-  {path:'ingredients',component:IngredientsComponent},
-  {path:'ingredient/:id',component:RecipeComponent},
-  {path:'recipes',component:RecipesComponent},
-  {path:'recipe/:id',component:RecipeComponent},
+  {path:'ingredients',component:IngredientsComponent, children : [
+    {path:'data/:id',component:RecipeComponent},
+  ]},
+  {path:'recipes',component:RecipesComponent, children : [
+    {path:'data/:id',component:RecipeComponent},
+  ]},
 ]
 
 @NgModule({

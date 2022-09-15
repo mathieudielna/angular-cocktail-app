@@ -1,5 +1,5 @@
 import { Cocktail } from '../../shared/interfaces/cocktail.interface';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 
 
 @Component({
