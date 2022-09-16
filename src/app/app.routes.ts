@@ -6,9 +6,10 @@ import { NotFoundComponent } from "./not-found/not-found.component";
 import { RecipeComponent } from "./recipe/recipe.component";
 import { RecipesComponent } from "./recipes/recipes.component";
 import { UserComponent } from './user/user.component';
+import { CartContainerComponent } from './cart-container/cart-container.component';
 
 export const  APP_ROUTES: Routes = [
-    {path:'',component:CocktailContainerComponent},
+    {path:'',component:CocktailContainerComponent, pathMatch:'full'},
     {path:'user',
     canActivate:[AuthGuard],
     //canActivateChild: [AuthGuard]
@@ -19,6 +20,7 @@ export const  APP_ROUTES: Routes = [
     {path:'recipes',component:RecipesComponent, children : [
       {path:'data/:id',component:RecipeComponent},
     ]},
+    {path:'cart',component:CartContainerComponent},
     {path:'**',component:NotFoundComponent},
     // {path:'**',redirectTo:''},
   ]

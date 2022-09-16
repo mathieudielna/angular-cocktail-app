@@ -2,7 +2,7 @@ import { Ingredient } from "./ingredient.interface";
 import { Recipe } from "./recipe.interface";
 
 export interface Cocktail {
-    name: String;
+    name: string;
     img?: string; //pas obligatoire
     description: string;
     recipe?: Recipe[];

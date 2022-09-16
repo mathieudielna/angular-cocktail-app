@@ -124,14 +124,6 @@ body {
         border: 1px solid var(--lightgray);
         border-top: 0;
     }
-    &-active {
-        background-color: var(--secondary);
-        color: white;
-        font-weight: 500;
-        cursor: pointer;
-        transition : all 0.4sec
-    }
-
     li:first-child {
         border-top: 1px solid var(--lightgray);
         border-top-right-radius: 3px;
@@ -142,6 +134,10 @@ body {
         border-bottom-right-radius: 3px;
         border-bottom-left-radius: 3px;
     }
+}
+
+.active {
+    background-color: var(--secondary);
 }
 
 .btn {

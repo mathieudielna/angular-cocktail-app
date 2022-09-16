@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { CocktailContainerComponent } from './cocktail-container/cocktail-container.component';
 import { CocktailDetailsComponent } from './cocktail-container/cocktail-details/cocktail-details.component';
@@ -17,6 +15,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { APP_ROUTES } from './app.routes'
 import { CommonModule } from '@angular/common';
 import { UserComponent } from './user/user.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { CartContainerComponent } from './cart-container/cart-container.component';
+import { IngredientListComponent } from './cart-container/ingredient-list/ingredient-list.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { UserComponent } from './user/user.component';
     RecipeComponent,
     RecipesComponent,
     NotFoundComponent,
-    UserComponent
+    UserComponent,
+    CartContainerComponent,
+    IngredientListComponent
 
   ],
   imports: [

@@ -1,5 +1,6 @@
 import { Cocktail } from '../../shared/interfaces/cocktail.interface';
 import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { CartService } from './../../shared/services/cart.service';
 
 
 @Component({
@@ -11,9 +12,13 @@ export class CocktailDetailsComponent implements OnInit {
 
   @Input() public selectedCocktail!: Cocktail;
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
+  }
+
+  public addToCart(): void {
+    this.cartService.addToCart(this.selectedCocktail.ingredients)
   }
 
 }
