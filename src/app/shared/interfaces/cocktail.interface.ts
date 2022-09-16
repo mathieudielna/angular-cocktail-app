@@ -6,5 +6,5 @@ export interface Cocktail {
     img?: string; //pas obligatoire
     description: string;
     recipe?: Recipe[];
-    ingredients?: Ingredient[];
+    ingredients: Ingredient[];
 }

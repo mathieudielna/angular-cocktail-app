@@ -2,7 +2,17 @@
     <img class="mb-20" [src]="selectedCocktail.img" [alt]="selectedCocktail.name">
     <h3 class="mb-20">{{ selectedCocktail.name }}</h3>
     <p class="mb-20">{{ selectedCocktail.description }}</p>
-    <button class="btn btn-primary mb-20">See recipe</button>
-    <button class="btn btn-primary">edit</button>
+    <ul class="list-primary mb-20">
+        <li *ngFor="let ingredient of selectedCocktail.ingredients" class="d-flex flex-row">
+            <span class="flex-fill">{{ ingredient.name }}</span>
+            <span class="badge">{{ ingredient.quantity}} {{ingredient.unite}}</span>
+        </li>
+    </ul>
+    <div class="d-flex flex-row flex-justify-content-between">
+        <button class="btn btn-primary">See recipe</button>
+        <button class="btn btn-primary">Add to cart</button>
+        <button class="btn btn-primary">Edit</button>
+    </div>
+    
     <!-- [routerLink]="[selectedCocktail.index]"  [queryparams]={ selectedCocktail.index } -->
 </div>

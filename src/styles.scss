@@ -105,18 +105,9 @@ body {
     flex : 1 1 50%,;
 }
 // theme 
-.list-primary {
-    &-active {
-        background-color: var(--secondary);
-        color: white;
-        font-weight: 500;
-        cursor: pointer;
-        transition : all 0.4sec
-    }
+
+.list-primary-action {
     li{
-        padding: 10px 15px;
-        border: 1px solid var(--lightgray);
-        border-top: 0;
         &:hover {
             background-color: var(--primary);
             color: white;
@@ -125,6 +116,22 @@ body {
         }
         transition : all 0.4sec
     }
+    
+}
+.list-primary {
+    li{
+        padding: 10px 15px;
+        border: 1px solid var(--lightgray);
+        border-top: 0;
+    }
+    &-active {
+        background-color: var(--secondary);
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+        transition : all 0.4sec
+    }
+
     li:first-child {
         border-top: 1px solid var(--lightgray);
         border-top-right-radius: 3px;
@@ -152,6 +159,15 @@ body {
         }
         transition: all 0.4s;
     }
+}
+
+.badge {
+    background-color: var(--primary);
+    border-radius: 3px;
+    padding: 2px 5px;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
 }
 //debug 
 
