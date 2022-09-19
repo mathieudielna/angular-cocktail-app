@@ -17,6 +17,7 @@ export const  APP_ROUTES: Routes = [
     {path:'ingredients',component:IngredientsComponent, children : [
       {path:'data/:id',component:RecipeComponent},
     ]},
+  { path: 'cart', component: CartContainerComponent },
     {path:'recipes',component:RecipesComponent, children : [
       {path:'data/:id',component:RecipeComponent},
     ]},
