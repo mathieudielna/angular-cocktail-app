@@ -14,7 +14,7 @@ export class CartService {
 
   addToCart(ingredients : Ingredient[]): void {
     const currentValue = this.ingredients$.value;
-    console.log(currentValue);
+    //console.log(currentValue);
     if(currentValue) {
       //[{name : 'citron, quantity:3}]
       const obj = [...currentValue, ...ingredients].reduce((acc: {[x: string]: number},
