@@ -1,5 +1,5 @@
 export interface Ingredient {
-    name: String;
-    unite: String;
-    quantity?: Float32Array;
+    name: string;
+    unite?: String;
+    quantity: number;
 }

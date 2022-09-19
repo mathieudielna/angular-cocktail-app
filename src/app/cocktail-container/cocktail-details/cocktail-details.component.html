@@ -10,8 +10,12 @@
     </ul>
     <div class="d-flex flex-row flex-justify-content-between">
         <button class="btn btn-primary">See recipe</button>
-        <button class="btn btn-primary">Add to cart</button>
         <button class="btn btn-primary">Edit</button>
+        <button 
+        (click)="addToCart()"
+        class="btn btn-primary"
+        >Add to cart
+        </button>
     </div>
     
     <!-- [routerLink]="[selectedCocktail.index]"  [queryparams]={ selectedCocktail.index } -->
