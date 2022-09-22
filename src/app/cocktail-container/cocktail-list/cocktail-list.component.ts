@@ -10,25 +10,25 @@ import { CocktailService } from 'src/app/shared/services/cocktail.service';
 })
 export class CocktailListComponent implements OnInit {
 
-  // Cocktails sent by the container 
+  // Cocktails sent by the container
   @Input() public cocktails!: Cocktail[];
-  @Input() public selectedCocktail!: Cocktail;
+  // @Input() public selectedCocktail!: Cocktail;
 
-  // passage of functions in the servicescocktail selected by user 
-  @Output() private changeCocktail: EventEmitter<number> = new EventEmitter<number>();
+  // passage of functions in the servicescocktail selected by user
+  // @Output() private changeCocktail: EventEmitter<number> = new EventEmitter<number>();
 
-  
+
 
   constructor(private cocktailService: CocktailService) { }
 
   // public selectCocktail(index: number): void {
   //   this.changeCocktail.emit(index);
   // }
-  
-  public selectCocktail(index: number): void {
-    this.cocktailService.selectCocktail(index);
-  }
-  
+
+  // public selectCocktail(index: number): void {
+  //   this.cocktailService.selectCocktail(index);
+  // }
+
 
   ngOnInit(): void {
   }

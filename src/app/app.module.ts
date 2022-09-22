@@ -19,6 +19,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CartContainerComponent } from './cart-container/cart-container.component';
 import { IngredientListComponent } from './cart-container/ingredient-list/ingredient-list.component';
 import { HeaderComponent } from './components/header/header.component';
+import { CocktailFormComponent } from './cocktail-container/cocktail-form/cocktail-form.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { HeaderComponent } from './components/header/header.component';
     NotFoundComponent,
     UserComponent,
     CartContainerComponent,
-    IngredientListComponent
+    IngredientListComponent,
+    CocktailFormComponent
 
   ],
   imports: [

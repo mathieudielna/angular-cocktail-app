@@ -7,10 +7,10 @@ import { Cocktail } from '../interfaces/cocktail.interface';
 })
 export class CocktailService {
 
-  constructor() { } 
+  constructor() { }
 
   public cocktails$: BehaviorSubject<any> = new BehaviorSubject([
-    
+
     {
       name: "Mojito",
       img: "https://www.offcourses.net/9466-large_default/boisson-gazeuse-4-agrumes.jpg",
@@ -32,7 +32,7 @@ export class CocktailService {
         unite : 'unit'
       },
     ],
-    },    
+    },
     {
       name: "Cosmopolitan",
       img: "https://wordpress.potagercity.fr/wp-content/uploads/2019/06/Boisson-fra%C3%AEche-m%C3%BBre-citron.jpg",
@@ -70,9 +70,14 @@ export class CocktailService {
   ]);
 
   public selectedCocktail$: BehaviorSubject<Cocktail> = new BehaviorSubject(this.cocktails$.value[0]);
-  
+
   public selectCocktail(index: number): void {
     this.selectedCocktail$.next(this.cocktails$.value[index]);
+  }
+
+  public getCocktail(index: number) {
+    const cocktails = this.cocktails$.value;
+    return cocktails[index];
   }
 
 }

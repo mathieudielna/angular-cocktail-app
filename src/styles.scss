@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-
 * {
     margin: 0;
     padding: 0;
@@ -22,20 +21,19 @@ a {
 
 :root {
     --font-familly: "Roboto", sans-serif;
-    --primary:#40739e;
-    --secondary:#192a56;
-    --accent:#40739e;
-    --lightgray:#7f8fa6;
-    --text-regular:#2f3542;
+    --primary: #40739e;
+    --secondary: #192a56;
+    --accent: #40739e;
+    --lightgray: #7f8fa6;
+    --text-regular: #2f3542;
 }
 
 body {
-    font-family:var(--font-familly);
+    font-family: var(--font-familly);
     color: var(--text-regular);
 }
 
-//layout 
-
+//layout
 .container {
     max-width: 1200px;
     display: block;
@@ -71,7 +69,6 @@ body {
     flex: 1 1 auto;
 }
 
-
 //util
 .p-10 {
     padding: 10px;
@@ -85,9 +82,7 @@ body {
     padding-right: 10px;
 }
 
-.pl-10 {
-
-}
+.pl-10 {}
 
 .m-10 {
     margin: 10px;
@@ -102,24 +97,24 @@ body {
 }
 
 .flex-50 {
-    flex : 1 1 50%,;
+    flex: 1 1 50%, ;
 }
-// theme 
 
+// theme
 .list-primary-action {
-    li{
+    li {
         &:hover {
             background-color: var(--primary);
             color: white;
             font-weight: 500;
             cursor: pointer;
         }
-        transition : all 0.4sec
+        transition: all 0.4sec
     }
-    
 }
+
 .list-primary {
-    li{
+    li {
         padding: 10px 15px;
         border: 1px solid var(--lightgray);
         border-top: 0;
@@ -138,6 +133,7 @@ body {
 
 .active {
     background-color: var(--secondary);
+    color: white;
 }
 
 .btn {
@@ -165,8 +161,8 @@ body {
     font-size: 12px;
     font-weight: 700;
 }
-//debug 
 
+//debug
 .d1 {
     border: 1px solid red;
 }
