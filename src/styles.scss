@@ -19,6 +19,17 @@ a {
     color: inherit;
 }
 
+input {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 8px 15px;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 :root {
     --font-familly: "Roboto", sans-serif;
     --primary: #40739e;
@@ -82,7 +93,9 @@ body {
     padding-right: 10px;
 }
 
-.pl-10 {}
+.pl-10 {
+    padding-left: 10px;
+}
 
 .m-10 {
     margin: 10px;
@@ -143,6 +156,9 @@ body {
     border-radius: 3px;
     font-weight: 700;
     cursor: pointer;
+    &-secondary {
+        background-color: #ddd;
+    }
     &-primary {
         background-color: var(--primary);
         color: white;

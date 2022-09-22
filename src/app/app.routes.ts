@@ -11,20 +11,19 @@ import { CocktailDetailsComponent } from './cocktail-container/cocktail-details/
 import { CocktailFormComponent } from './cocktail-container/cocktail-form/cocktail-form.component';
 
 export const  APP_ROUTES: Routes = [
+    {path: 'cocktail', component: CocktailContainerComponent,
+      children: [
+        { path: 'new', component: CocktailFormComponent },
+        { path: ':index/edit', component: CocktailFormComponent },
+        { path: ':index', component: CocktailDetailsComponent },
+        { path: '', redirectTo: '0', pathMatch: 'full' },
+      ]
+    },
     {path:'',component:CocktailContainerComponent, pathMatch:'full'},
     {path:'user',
     canActivate:[AuthGuard],
     //canActivateChild: [AuthGuard]
     component:UserComponent},
-    {path: 'cocktail', component: CocktailContainerComponent,
-    children: [
-      {path: 'new', component: CocktailFormComponent},
-      {path: ':index/edit', component: CocktailFormComponent},
-      {path: ':index', component: CocktailDetailsComponent},
-      {path: '', redirectTo: '0', pathMatch: 'full'},
-
-    ]
-  },
     {path:'ingredients',component:IngredientsComponent, children : [
       {path:'data/:id',component:RecipeComponent},
     ]},

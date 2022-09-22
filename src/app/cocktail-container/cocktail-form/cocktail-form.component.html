@@ -1,1 +1,20 @@
-<p>cocktail-form works!</p>
+<form [formGroup]="cocktailForm" (ngSubmit)="submit()">
+    <div class="form-group d-flex flex-column mb-20">
+        <label>Name</label>
+        <input formGroupName="name" type="text">
+    </div>
+    <div class="form-group d-flex flex-column mb-20">
+        <label>Img</label>
+        <input formGroupName="img" type="text">
+    </div>
+    <div class="form-group d-flex flex-column mb-20">
+        <label>Description</label>
+        <input formGroupName="description" type="text">
+    </div>
+    <div>
+        <button [disabled]="cocktailForm.invalid" class="btn btn-primary ">Valid</button>
+        <button routerLink="../" type="button" class="btn btn-secondary">Cancel</button>
+    </div>
+
+
+</form>
