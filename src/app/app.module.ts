@@ -20,6 +20,7 @@ import { CartContainerComponent } from './cart-container/cart-container.componen
 import { IngredientListComponent } from './cart-container/ingredient-list/ingredient-list.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CocktailFormComponent } from './cocktail-container/cocktail-form/cocktail-form.component';
+import { FilterPipe } from './shared/pipes/filter.pipe';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { CocktailFormComponent } from './cocktail-container/cocktail-form/cockta
     UserComponent,
     CartContainerComponent,
     IngredientListComponent,
-    CocktailFormComponent
+    CocktailFormComponent,
+    FilterPipe
 
   ],
   imports: [
