@@ -1,4 +1,7 @@
-<div class="d-flex flex-column">
+<!-- if not empty -->
+<div *ngIf="selectedCocktail" class="d-flex flex-column">
+
+    <!-- data per cocktail-->
     <img class="mb-20" [src]="selectedCocktail.img" [alt]="selectedCocktail.name">
     <h3 class="mb-20">{{ selectedCocktail.name }}</h3>
     <p class="mb-20">{{ selectedCocktail.description }}</p>
