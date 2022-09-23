@@ -41,7 +41,9 @@ export class CocktailFormComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       const index = paramMap.get("index");
       if(index !== null) {
-        this.cocktail = this.cocktailService.getCocktail(+index);
+        this.cocktailService.getCocktail(+index).subscribe((cocktail : Cocktail) =>{
+        this.cocktail = cocktail
+        });
       }
       this.initForm(this.cocktail); 
     ;

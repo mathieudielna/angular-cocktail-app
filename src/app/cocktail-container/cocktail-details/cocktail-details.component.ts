@@ -25,7 +25,9 @@ export class CocktailDetailsComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe((ParamMap: ParamMap) => {
       this.index =  ParamMap.get('index');
       // console.log(this.index);
-      this.selectedCocktail = this.cocktailService.getCocktail(+this.index!);
+      this.cocktailService.getCocktail(+this.index!).subscribe((cocktail : Cocktail) => {
+        this.selectedCocktail = cocktail;
+      });
     })
   }
 
