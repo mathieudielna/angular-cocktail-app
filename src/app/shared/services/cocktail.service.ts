@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Cocktail } from '../interfaces/cocktail.interface';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -82,6 +83,17 @@ export class CocktailService {
   public addCocktail(cocktail: Cocktail):void {
     const value = this.cocktails$.value;
     this.cocktails$.next([...value, cocktail]);
+  }
+
+  public editCocktail(editedCocktail: Cocktail): void {
+    const value = this.cocktails$.value;
+    this.cocktails$.next(value.map((cocktail: Cocktail) => {
+      if (cocktail.name === editedCocktail.name) {
+        return editedCocktail;
+      } else {
+        return cocktail;
+      }
+    }))
   }
 
 }
