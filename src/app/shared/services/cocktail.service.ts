@@ -10,7 +10,6 @@ export class CocktailService {
   constructor() { }
 
   public cocktails$: BehaviorSubject<any> = new BehaviorSubject([
-
     {
       name: "Mojito",
       img: "https://www.offcourses.net/9466-large_default/boisson-gazeuse-4-agrumes.jpg",
@@ -75,9 +74,14 @@ export class CocktailService {
     this.selectedCocktail$.next(this.cocktails$.value[index]);
   }
 
-  public getCocktail(index: number) {
+  public getCocktail(index: number): Cocktail {
     const cocktails = this.cocktails$.value;
     return cocktails[index];
+  }
+
+  public addCocktail(cocktail: Cocktail):void {
+    const value = this.cocktails$.value;
+    this.cocktails$.next([...value, cocktail]);
   }
 
 }

@@ -15,7 +15,8 @@ export class CocktailDetailsComponent implements OnInit {
   public selectedCocktail!: Cocktail;
   private index?: string | null ;
 
-  constructor(private cartService: CartService,
+  constructor(
+    private cartService: CartService,
     private activatedRoute: ActivatedRoute,
     private cocktailService : CocktailService
     ) {}

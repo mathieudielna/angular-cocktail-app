@@ -11,8 +11,29 @@
         <label>Description</label>
         <input formGroupName="description" type="text">
     </div>
+    <button (click)="addIngredient()" type="button" class="btn btn-primary ">
+    Add ingredient
+    </button>
+    <div formArrayName="ingredients">
+        <div *ngFor="let ingredient of ingredients.controls; let i = index;" formGroupName="i">
+            <div class="form-group d-flex flex-column">
+                <label>name</label>
+                <input formArrayName="name" type="text">
+            </div>
+            <div class="form-group d-flex flex-column">
+                <label>quantity</label>
+                <input formArrayName="quantity" type="text">
+            </div>
+            <div class="form-group d-flex flex-column">
+                <label>unite</label>
+                <input formArrayName="unite" type="text">
+            </div>
+            <hr class="mb-20">
+        </div>
+        <hr class="mb-20">
+    </div>
     <div>
-        <button [disabled]="cocktailForm.invalid" class="btn btn-primary ">Valid</button>
+        <button [disabled]="!cocktailForm.invalid" class="btn btn-primary ">Valid</button>
         <button routerLink="../" type="button" class="btn btn-secondary">Cancel</button>
     </div>
 
