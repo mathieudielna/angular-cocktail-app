@@ -8,7 +8,7 @@ import { CocktailDetailsComponent } from './cocktail-container/cocktail-details/
 import { CocktailListComponent } from './cocktail-container/cocktail-list/cocktail-list.component';
 import { IngredientComponent } from './ingredient/ingredient.component';
 import { RecipeComponent } from './recipe/recipe.component';
-import { Route, RouterModule, Routes } from '@angular/router';
+import {  RouterModule } from '@angular/router';
 import { IngredientsComponent } from './ingredients/ingredients.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -21,6 +21,7 @@ import { IngredientListComponent } from './cart-container/ingredient-list/ingred
 import { HeaderComponent } from './components/header/header.component';
 import { CocktailFormComponent } from './cocktail-container/cocktail-form/cocktail-form.component';
 import { FilterPipe } from './shared/pipes/filter.pipe';
+import {HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -40,15 +41,15 @@ import { FilterPipe } from './shared/pipes/filter.pipe';
     CartContainerComponent,
     IngredientListComponent,
     CocktailFormComponent,
-    FilterPipe
-
+    FilterPipe,
   ],
   imports: [
-BrowserModule,
+    BrowserModule,
     FormsModule,
     CommonModule,
     RouterModule.forRoot(APP_ROUTES),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
