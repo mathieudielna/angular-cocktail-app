@@ -15,7 +15,7 @@ export class CocktailService {
   }
 
   public cocktails$: BehaviorSubject<any> = new BehaviorSubject(null);
-  public selectedCocktail$: BehaviorSubject<any> = new BehaviorSubject(this.cocktails$.value[0]);
+  public selectedCocktail$: BehaviorSubject<any> = new BehaviorSubject(null);
 
   public selectCocktail(index: number): void {
     this.selectedCocktail$.next(this.cocktails$.value[index]);
@@ -43,7 +43,7 @@ export class CocktailService {
   }
 
   public fetchCocktails(): Observable<any> {
-    return this.http.get('http://www.restapi.fr/api/cocktails').pipe(
+    return this.http.get('https://www.restapi.fr/api/cocktails').pipe(
       tap((cocktails) => {
         this.cocktails$.next(cocktails);
       })
