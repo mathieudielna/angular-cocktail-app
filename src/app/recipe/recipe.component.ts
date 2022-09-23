@@ -7,13 +7,14 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./recipe.component.scss']
 })
 export class RecipeComponent implements OnInit {
- 
   public id!: String | null;
-  
-  constructor(private activatedRoute: ActivatedRoute) { }
+
+  constructor
+  (private activatedRoute: ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => 
+    this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) =>
     {
       this.id = paramMap.get('id');
     })

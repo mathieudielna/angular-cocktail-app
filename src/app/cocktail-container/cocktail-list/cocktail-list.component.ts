@@ -9,7 +9,6 @@ import { CocktailService } from 'src/app/shared/services/cocktail.service';
   styleUrls: ['./cocktail-list.component.scss']
 })
 export class CocktailListComponent implements OnInit {
-
   // Cocktails sent by the container
   @Input() public cocktails!: Cocktail[];
   // @Input() public selectedCocktail!: Cocktail;
@@ -17,9 +16,9 @@ export class CocktailListComponent implements OnInit {
   // passage of functions in the servicescocktail selected by user
   // @Output() private changeCocktail: EventEmitter<number> = new EventEmitter<number>();
 
-
-
-  constructor(private cocktailService: CocktailService) { }
+  constructor(
+    private cocktailService: CocktailService
+    ) { }
 
   // public selectCocktail(index: number): void {
   //   this.changeCocktail.emit(index);

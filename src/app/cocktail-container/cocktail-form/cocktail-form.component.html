@@ -1,16 +1,40 @@
+<!-- basic form -->
 <form [formGroup]="cocktailForm" (ngSubmit)="submit()">
     <div class="form-group d-flex flex-column mb-20">
         <label>Name</label>
-        <input formGroupName="name" type="text">
+        <input formControlName="name" type="text">
     </div>
     <div class="form-group d-flex flex-column mb-20">
         <label>Img</label>
-        <input formGroupName="img" type="text">
+        <input formControlName="img" type="text">
     </div>
     <div class="form-group d-flex flex-column mb-20">
         <label>Description</label>
-        <input formGroupName="description" type="text">
+        <input formControlName="description" type="text">
     </div>
+    <!-- create ingredient -->
+    <button (click)="addIngredient()" type="button" class="btn btn-primary ">
+    Add ingredient
+    </button>
+    <div formArrayName="ingredients">
+        <div *ngFor="let ingredient of ingredients.controls; let i = index;" [formGroupName]="i">
+            <div class="form-group d-flex flex-column">
+                <label>name</label>
+                <input formControlName="name" type="text">
+            </div>
+            <div class="form-group d-flex flex-column">
+                <label>quantity</label>
+                <input formControlName="quantity" type="number">
+            </div>
+            <div class="form-group d-flex flex-column">
+                <label>unite</label>
+                <input formControlName="unite" type="text">
+            </div>
+            <hr class="mb-20">
+        </div>
+        <hr class="mb-20">
+    </div>
+    <!-- Action button -->
     <div>
         <button [disabled]="cocktailForm.invalid" class="btn btn-primary ">Valid</button>
         <button routerLink="../" type="button" class="btn btn-secondary">Cancel</button>
