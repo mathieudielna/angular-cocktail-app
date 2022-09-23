@@ -10,10 +10,16 @@ import { CocktailService } from '../../shared/services/cocktail.service';
   styleUrls: ['./cocktail-form.component.scss']
 })
 export class CocktailFormComponent implements OnInit {
-  public cocktailForm!: FormGroup;
+  public cocktailForm: FormGroup = this.formBuilder.group({
+      name: ['', [Validators.required]],
+      img: ['', [Validators.required]],
+      description: ['', [Validators.required]],
+      recipe: [''],
+      ingredients: this.formBuilder.array([], [Validators.required]),
+    });
 
   public get  ingredients() {
-    return this.cocktailForm.get('ingredients') as FormArray<any>;
+    return this.cocktailForm.get('ingredients') as FormArray;
   }
 
   constructor(
@@ -29,13 +35,7 @@ export class CocktailFormComponent implements OnInit {
   // recipe?: Recipe[];
   // ingredients: Ingredient[];
   ngOnInit(): void {
-    this.cocktailForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      img: ['', Validators.required],
-      description: ['', Validators.required],
-      recipe: [''],
-      ingredients: this.formBuilder.array([], Validators.required),
-    })
+    
   }
 
   // name: string;
@@ -43,9 +43,9 @@ export class CocktailFormComponent implements OnInit {
   // quantity: number;
   addIngredient():void {
     this.ingredients.push(this.formBuilder.group({
-      name : ['', Validators.required],
-      quantity: [0, Validators.required],
-      unite: ['', Validators.required] ,
+      name : ['',[ Validators.required]],
+      quantity: ['',[ Validators.required]],
+      unite: ['', [Validators.required]] ,
     }))
   }
 
