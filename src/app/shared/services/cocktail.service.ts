@@ -10,13 +10,12 @@ import { Cocktail } from '../interfaces/cocktail.interface';
 })
 export class CocktailService {
 
-  constructor(private http : HttpClient) { 
+  constructor(private http : HttpClient) {
     //init cocktails
     // this.seed();
   }
-
   public cocktails$: BehaviorSubject<any> = new BehaviorSubject(null);
-  
+
   public getCocktail(index: number): Observable<Cocktail> {
     return this.cocktails$.pipe(
       filter((cocktails: Cocktail[]) => cocktails !== null),
@@ -26,7 +25,7 @@ export class CocktailService {
       })
     )
   }
-  
+
   public addCocktail(cocktail: Cocktail): Observable<Cocktail> {
     return this.http.post<Cocktail>('https://www.restapi.fr/api/cocki', cocktail).pipe(
       tap((savedCocktail : Cocktail)=> {
@@ -40,9 +39,6 @@ export class CocktailService {
   }
 
   public editCocktail(editedCocktailId : string | undefined ,editedCocktail: Cocktail): Observable<Cocktail> {
-
-    console.log(editedCocktailId);
-    
     return this.http.patch<Cocktail>(`https://www.restapi.fr/api/cocki/${editedCocktailId}`, editedCocktail)
     .pipe(
       tap((savedCocktail : Cocktail) => {
@@ -75,8 +71,8 @@ export class CocktailService {
       })
       )
     }
-    
-    // init API  
+
+    // init API
   public seed() {
       this.http.post('https://www.restapi.fr/api/cocki',[
         {
@@ -137,10 +133,10 @@ export class CocktailService {
       }
     ] ,).subscribe();
   }
-  
-  // old code 
+
+  // old code
   // public selectedCocktail$: BehaviorSubject<any> = new BehaviorSubject(null);
-  
+
   // public selectCocktail(index: number): void {
   //   this.selectedCocktail$.next(this.cocktails$.value[index]);
   // }

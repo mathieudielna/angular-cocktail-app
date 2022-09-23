@@ -32,10 +32,11 @@ export class CocktailDetailsComponent implements OnInit, OnDestroy {
         this.subscription.unsubscribe();
       }
       // console.log(this.index);
-      this.subscription = this.cocktailService.getCocktail(+paramMap.get('index')!).subscribe((cocktail : Cocktail) => {
+      this.subscription = this.cocktailService
+      .getCocktail(+paramMap.get('index')!).subscribe((cocktail : Cocktail) => {
         this.selectedCocktail = cocktail;
       });
-   
+
     })
   }
 
