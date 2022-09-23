@@ -19,7 +19,7 @@ export const  APP_ROUTES: Routes = [
         { path: '', redirectTo: '0', pathMatch: 'full' },
       ]
     },
-    {path:'',component:CocktailContainerComponent, pathMatch:'full'},
+    // {path:'',component:CocktailContainerComponent, pathMatch:'full'},
     {path:'user',
     canActivate:[AuthGuard],
     //canActivateChild: [AuthGuard]
